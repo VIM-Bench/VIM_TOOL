@@ -18,26 +18,27 @@ Zero shot evaluation paradigm comparison for MLLMs. (a) Left: Image + Text instr
 <img src="assets/VISE_overview.png" width="1024px"></img>
 </p>
 
-Three in-context evaluation settings: (a) Left: Zero Shot has only one question to be answered; (b) Middle: One Shot, the image is composed of one image-instruction-answer as a reference, the answer for the second image-instruction query is required; (c) Right: Pair Shot, the image is composed of two image-instruction pairs, and answer for both are required.
-
-<p align="center">
-<img src="assets/VISE_Settings.png" width="1024px"></img>
-</p>
-
-Main quantitative results over each benchmark, including sub set and full set for three settings.
-<p align="center">
-<img src="assets/main_table.png" width="1024px"></img>
-</p>
-
-Left: Exploration setup for instruction location on zero shot evaluation for MM-Vet. Right: Exploration setup for text prompt on zero shot evaluation for MM-Vet. * denotes from the origin paper reported.
-<p align="center">
-<img src="assets/explore_setting.png" width="1024px"></img>
-</p>
-
-Our results highlight a promising direction for the enhancement of MLLMs capabilities on instruction following. We aim VIM to serve as a useful norm for advancing the state of the art and driving further progress in the field.
-
 ## Installation
 Please follow [install](INSTALL.md) page to set up the environments and models.
+
+## Model Inference
+You can load our [v-mllm-7b](https://huggingface.co/VIM-Bench/v-mllm-7b) and [v-mllm-13b](https://huggingface.co/VIM-Bench/v-mllm-13b) using [LLaVA](https://github.com/haotian-liu/LLaVA) codebase since we have the same architecture. You can also use [VLMEvalKit](https://github.com/open-compass/VLMEvalKit) to load our model by adding two lines in the **vlmeval/config.py** in `llava_series`:
+```
+'v-mllm_7b': partial(LLaVA, model_pth='VIM-Bench/v-mllm-7b'),
+'v-mllm_13b': partial(LLaVA, model_pth='VIM-Bench/v-mllm-13b'),
+```
+And update `model_name` in **vlmeval/vlm/llava/llava.py** template:
+```
+if model_pth in ['VIM-Bench/v-mllm-7b']:
+      model_name = 'llava-v1.5-7b'
+elif model_pth in ['VIM-Bench/v-mllm-13b']:
+      model_name = 'llava-v1.5-13b'
+```
+
+We also support the already updated vlmeval kit in our repo in **vlmeval**. After you install enviroment from [LLaVA](https://github.com/haotian-liu/LLaVA) and [VLMEvalKit](https://github.com/open-compass/VLMEvalKit). You can directly run as below on one example:
+```
+python test_vmllm.py
+```
 
 ## Applying VIM for Customized Dataset
 
@@ -56,6 +57,26 @@ bash scripts/convert_probe_bench.sh os mme
 ```
 bash scripts/convert_probe_bench.sh ps mme
 ```
+
+## More Paper Details
+Three in-context evaluation settings: (a) Left: Zero Shot has only one question to be answered; (b) Middle: One Shot, the image is composed of one image-instruction-answer as a reference, the answer for the second image-instruction query is required; (c) Right: Pair Shot, the image is composed of two image-instruction pairs, and answer for both are required.
+
+<p align="center">
+<img src="assets/VISE_Settings.png" width="1024px"></img>
+</p>
+
+Main quantitative results over each benchmark, including sub set and full set for three settings.
+<p align="center">
+<img src="assets/main_table.png" width="1024px"></img>
+</p>
+
+Left: Exploration setup for instruction location on zero shot evaluation for MM-Vet. Right: Exploration setup for text prompt on zero shot evaluation for MM-Vet. * denotes from the origin paper reported.
+<p align="center">
+<img src="assets/explore_setting.png" width="1024px"></img>
+</p>
+
+Our results highlight a promising direction for the enhancement of MLLMs capabilities on instruction following. We aim VIM to serve as a useful norm for advancing the state of the art and driving further progress in the field.
+
 
 ## Citation
 
