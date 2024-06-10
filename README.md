@@ -1,7 +1,7 @@
 # <img src="assets/vim_logo.png" alt="Logo" width="30" height="30" align="center"> VIM: Probing Multimodal Large Language Models for Visual Embedded Instruction Following
 
 <p align="center">
-   🔥 <a href="https://vim-bench.github.io/" target="_blank">Project Page</a> 📃 <a href="https://arxiv.org/abs/2311.17647" target="_blank">Paper</a> 🐦 <a href="https://twitter.com/yujielu_10" target="_blank">Twitter</a><br>
+   🔥 <a href="https://vim-bench.github.io/" target="_blank">Project Page</a> 📃 <a href="https://arxiv.org/abs/2311.17647" target="_blank">Paper</a> 🐦 <a href="https://twitter.com/yujielu_10" target="_blank">Twitter</a> 🤗 <a href="https://huggingface.co/VIM-Bench" target="_blank">Model and Data</a><br>
 </p>
 
 We introduce VISUAL EMBEDDED INSTRUCTION (VIM), a new framework designed to evaluate the visual instruction following capability of Multimodal Large Language Models (MLLMs). VIM challenges the MLLMs by embedding the instructions into the visual scenes, demanding strong visual interpretative skills for instruction following.
