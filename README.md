@@ -83,6 +83,14 @@ Our results highlight a promising direction for the enhancement of MLLMs capabil
 If you found this repository useful, please consider cite our paper:
 
 ```bibtex
+@misc{li2024text,
+      title={Text as Images: Can Multimodal Large Language Models Follow Printed Instructions in Pixels?}, 
+      author={Xiujun Li and Yujie Lu and Zhe Gan and Jianfeng Gao and William Yang Wang and Yejin Choi},
+      year={2024},
+      eprint={2311.17647},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
 @misc{lu2023vim,
       title={VIM: Probing Multimodal Large Language Models for Visual Embedded Instruction Following}, 
       author={Yujie Lu and Xiujun Li and William Yang Wang and Yejin Choi},
