@@ -1,4 +1,4 @@
-# <img src="assets/vim_logo.png" alt="Logo" width="30" height="30" align="center"> VIM: Probing Multimodal Large Language Models for Visual Embedded Instruction Following
+# <img src="assets/vim_logo.png" alt="Logo" width="30" height="30" align="center"> Text as Images: Can Multimodal Large Language Models Follow Printed Instructions in Pixels?
 
 <p align="center">
    🔥 <a href="https://vim-bench.github.io/" target="_blank">Project Page</a> 📃 <a href="https://arxiv.org/abs/2311.17647" target="_blank">Paper</a> 🐦 <a href="https://twitter.com/yujielu_10" target="_blank">Twitter</a> 🤗 <a href="https://huggingface.co/VIM-Bench" target="_blank">Model and Data</a><br>
